@@ -32,8 +32,8 @@ namespace Catalog.API.Controllers
             return Ok(products);
         }
 
-        //mongodb bson id is of lenght 24
-        [HttpGet("{id:lenght(24)}", Name = GetProductEndPoint)]
+        //mongodb bson id is of length 24
+        [HttpGet("{id:length(24)}", Name = GetProductEndPoint)]
         [ProducesResponseType(typeof(Product), (int)HttpStatusCode.OK)]
         [ProducesResponseType((int)HttpStatusCode.NotFound)]
         public async Task<ActionResult<Product>> GetProductById(string id)
@@ -74,7 +74,7 @@ namespace Catalog.API.Controllers
             return Ok(await _repository.UpdateProduct(product));
         }
 
-        [HttpDelete("{id:lenght(24)}", Name = "DeleteProduct")]
+        [HttpDelete("{id:length(24)}", Name = "DeleteProduct")]
         [ProducesResponseType(typeof(Product), (int)HttpStatusCode.OK)]
         public async Task<IActionResult> DeleteProductById(string id)
         {
